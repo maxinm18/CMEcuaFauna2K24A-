@@ -51,7 +51,7 @@ public class CMSexoDTO {
     }
 
     public String getNombre() {
-        return Nombre;
+        return this.Nombre;
     }
 
     public void setNombre(String nombre) {

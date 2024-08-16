@@ -1,5 +1,5 @@
-import DataAccess.CMProvinciaDAO;
-import DataAccess.DTO.CMProvinciaDTO;
+import BusinessLogic.CMSexoBL;
+import DataAccess.DTO.CMSexoDTO;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -28,12 +28,23 @@ public class App {
             System.out.println(e.getMessage());
         }
         */
+         /*
         try {
             CMProvinciaDAO h = new CMProvinciaDAO();
             for(CMProvinciaDTO s : h.readAll())
             System.out.println(s.toString());
         } catch (Exception e) {
             System.out.println(e.getMessage());
+        }
+            */
+        try {
+            CMProvinciaBL pbl =  new CMProvinciaBL();
+            pbl.add(new CMProvinciaDTO(0, 0, 0, "Nuevo sexo", "prueba",
+            null, null, null));
+            for(CMSexoDTO s : sbl.getAll())
+            System.out.println(s.toString());
+        } catch (Exception e) {
+        System.out.println(e.getMessage());
         }
     }
 }
