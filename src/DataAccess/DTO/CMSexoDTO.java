@@ -1,80 +1,69 @@
 package DataAccess.DTO;
 
 public class CMSexoDTO {
-
-    private Integer IdCMHormiga;
-    private String  HormigaTipo;
-    private Integer IdCMSexo;
-    private Integer IdCMProvincia;
-    private Integer IdCMAlimentoModificado;
-    private Integer IdCMAlimentoNativo;
-    private String  Estado;
-    private String  FechaCreacion;
-    private String  FechaModifica;
+    private Integer RowNum;
+    
+    private Integer IdCMCatalogo;
+    private Integer IdCMCatalogoTipo;
+    private String Nombre;
+    private String Descripcion;    
+    private String Estado;
+    private String FechaCreacion;
+    private String FechaModifica;
     
     public CMSexoDTO() {
     }
-    
-    public CMSexoDTO(Integer idCMHormiga, String hormigaTipo, Integer idCMSexo, Integer idCMProvincia,
-            Integer idCMAlimentoModificado, Integer idCMAlimentoNativo, String estado, String fechaCreacion,
-            String fechaModifica) {
-        this.IdCMHormiga = idCMHormiga;
-        this.HormigaTipo = hormigaTipo;
-        this.IdCMSexo = idCMSexo;
-        this.IdCMProvincia = idCMProvincia;
-        this.IdCMAlimentoModificado = idCMAlimentoModificado;
-        this.IdCMAlimentoNativo = idCMAlimentoNativo;
+
+    public CMSexoDTO(Integer RowNum, Integer idCMCatalogo, Integer idCMCatalogoTipo, String nombre, String descripcion,
+            String estado, String fechaCreacion, String fechaModifica) {
+        this.RowNum  = RowNum;
+        this.IdCMCatalogo = idCMCatalogo;
+        this.IdCMCatalogoTipo = idCMCatalogoTipo;
+        this.Nombre = nombre;
+        this.Descripcion = descripcion;
         this.Estado = estado;
         this.FechaCreacion = fechaCreacion;
         this.FechaModifica = fechaModifica;
     }
-
-    public Integer getIdCMHormiga() {
-        return IdCMHormiga;
+    
+    public Integer getRowNum() {
+        return RowNum;
     }
 
-    public void setIdCMHormiga(Integer idCMHormiga) {
-        IdCMHormiga = idCMHormiga;
+    public void setRowNum(Integer rowNum) {
+        RowNum = rowNum;
+    }
+    
+    public Integer getIdCMCatalogo() {
+        return IdCMCatalogo;
     }
 
-    public String getHormigaTipo() {
-        return HormigaTipo;
+    public void setIdCMCatalogo(Integer idCMCatalogo) {
+        IdCMCatalogo = idCMCatalogo;
     }
 
-    public void setHormigaTipo(String hormigaTipo) {
-        HormigaTipo = hormigaTipo;
+    public Integer getIdCMCatalogoTipo() {
+        return IdCMCatalogoTipo;
     }
 
-    public Integer getIdCMSexo() {
-        return IdCMSexo;
+    public void setIdCMCatalogoTipo(Integer idCMCatalogoTipo) {
+        IdCMCatalogoTipo = idCMCatalogoTipo;
     }
 
-    public void setIdCMSexo(Integer idCMSexo) {
-        IdCMSexo = idCMSexo;
+    public String getNombre() {
+        return Nombre;
     }
 
-    public Integer getIdCMProvincia() {
-        return IdCMProvincia;
+    public void setNombre(String nombre) {
+        Nombre = nombre;
     }
 
-    public void setIdCMProvincia(Integer idCMProvincia) {
-        IdCMProvincia = idCMProvincia;
+    public String getDescripcion() {
+        return Descripcion;
     }
 
-    public Integer getIdCMAlimentoModificado() {
-        return IdCMAlimentoModificado;
-    }
-
-    public void setIdCMAlimentoModificado(Integer idCMAlimentoModificado) {
-        IdCMAlimentoModificado = idCMAlimentoModificado;
-    }
-
-    public Integer getIdCMAlimentoNativo() {
-        return IdCMAlimentoNativo;
-    }
-
-    public void setIdCMAlimentoNativo(Integer idCMAlimentoNativo) {
-        IdCMAlimentoNativo = idCMAlimentoNativo;
+    public void setDescripcion(String descripcion) {
+        Descripcion = descripcion;
     }
 
     public String getEstado() {
@@ -100,18 +89,17 @@ public class CMSexoDTO {
     public void setFechaModifica(String fechaModifica) {
         FechaModifica = fechaModifica;
     }
+
     @Override
     public String toString(){
         return  "  \n" + getClass().getName()
-                + "\n IdCMHormiga                "+ getIdCMHormiga()
-                + "\n HormigaTipo                "+ getHormigaTipo()
-                + "\n IdCMSexo                   "+ getIdCMSexo()
-                + "\n IdCMProvincia              "+ getIdCMProvincia()
-                + "\n IdCMAlimentoModificado     "+ getIdCMAlimentoModificado()
-                + "\n IdCMAlimentoNativo         "+ getIdCMAlimentoNativo()
-                + "\n Estado                     "+ getEstado()
-                + "\n FechaCreacion              "+ getFechaCreacion()
-                + "\n FechaModifica              "+ getFechaModifica();
+                + "\n idCMCatalogo     "+ getIdCMCatalogo()
+                + "\n idCMCatalogoTipo "+ getIdCMCatalogoTipo()
+                + "\n nombre         "+ getNombre()
+                + "\n descripcion    "+ getDescripcion()
+                + "\n estado         "+ getEstado()
+                + "\n fechaCreacion  "+ getFechaCreacion()
+                + "\n fechaModifica  "+ getFechaModifica();
     }
 
 }

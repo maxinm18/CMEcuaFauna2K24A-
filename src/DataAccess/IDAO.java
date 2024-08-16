@@ -9,5 +9,5 @@ public interface IDAO<T> {
     public boolean delete(int id)       throws Exception;
     
     public T readBy(Integer id)         throws Exception;
-    //public Integer getMaxRow() throws Exception;
+    public Integer getMaxRow() throws Exception;
 }

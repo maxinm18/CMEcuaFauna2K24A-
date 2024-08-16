@@ -89,7 +89,7 @@ WHERE IdCMCatalogoProvincia BETWEEN 1 AND 24;
 INSERT INTO CMCatalogoAlimento
  (IdCMCatalogo        ,Nombre             ,Descripcion) VALUES
  (8                   ,'Carnivoro'        , 'Alimento de origen animal')
-,(8                   ,'Herviboro'        , 'Alimento Modificado')
+,(8                   ,'Herviboro'        , 'Alimento origen vegetal')
 ,(8                   ,'Omnivoro'         ,'Carnes y plantas')
 ,(8                   ,'Insectivoro'      ,'Solo insectos')
 
@@ -118,4 +118,29 @@ INSERT INTO CMHormiga
 ,FechaModifica      
 FROM    CMCatalogo    
 WHERE   Estado ='A' 
-AND   IdCMCatalogoTipo = 1 
+AND   IdCMCatalogoTipo = 1; 
+
+SELECT ROW_NUMBER () OVER ( ORDER BY IdCMCatalogo ) RowNum
+,IdCMCatalogo
+,IdCMCatalogoTipo
+,Nombre
+,Descripcion
+,Estado
+,FechaCreacion
+,FechaModifica
+FROM CMCatalogo
+WHERE Estado ='A'
+AND IdCMCatalogoTipo = 2;
+
+SELECT IdCMHormiga 
+,IdCMHormigaTipo
+,IdCMSexo
+,IdCMCatalogoProvincia
+,IdCMCatalogoModificado
+,IdCMCatalogoNativo
+,Estado
+,FechaCreacion
+,FechaModifica
+FROM CMHormiga
+WHERE Estado ='A' 
+AND IdCMHormigaTipo IN (1,2,3,4);

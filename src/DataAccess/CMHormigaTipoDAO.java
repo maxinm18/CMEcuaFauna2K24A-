@@ -135,4 +135,25 @@ public class CMHormigaTipoDAO extends CMSQLiteDataHelper implements IDAO<CMHormi
         return s;
     }
 
+    @Override
+    public Integer getMaxRow() throws Exception {
+        String query =" SELECT COUNT(*) TotalReg "
+                     +" FROM    CMCatalogo         "
+                     +" WHERE   Estado ='A'      "
+                     +" AND     IdCMCatalogoTipo = 1";
+        try {
+            Connection conn = openConnection();         // conectar a DB     
+            Statement  stmt = conn.createStatement();   // CRUD : select * ...    
+            ResultSet rs   = stmt.executeQuery(query);  // ejecutar la
+            while (rs.next()) {
+                return rs.getInt(1);                    // TotalReg
+            }
+        } 
+        catch (SQLException e) {
+            throw e; //new PatException(e.getMessage(), getClass().getName(), "getMaxRow()");
+        }
+        return 0;
+    }        
+    
+
 }

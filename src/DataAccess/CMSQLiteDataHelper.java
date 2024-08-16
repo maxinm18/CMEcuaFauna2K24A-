@@ -4,7 +4,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public abstract class CMSQLiteDataHelper {
-    private static String DBPathConnection = "jdbc:sqlite:DataBase//EXOBOT.sqlite"; 
+    private static String DBPathConnection = "jdbc:sqlite:DataBase//CMEcuafauna.sqlite"; 
     private static Connection conn = null;
     // protected SQLiteDataHelper(){}
     
