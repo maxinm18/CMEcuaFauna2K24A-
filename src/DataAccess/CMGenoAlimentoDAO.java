@@ -2,24 +2,24 @@ package DataAccess;
 
 import java.util.List;
 
-import DataAccess.DTO.CMAlimentoDTO;
+import DataAccess.DTO.CMGenoalimentoDTO;
 
-public class CMAlimentoDAO extends CMSQLiteDataHelper implements IDAO<CMAlimentoDTO> {
+public class CMGenoAlimentoDAO extends CMSQLiteDataHelper implements IDAO<CMGenoalimentoDTO>{
 
     @Override
-    public boolean create(CMAlimentoDTO entity) throws Exception {
+    public boolean create(CMGenoalimentoDTO entity) throws Exception {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'create'");
     }
 
     @Override
-    public List<CMAlimentoDTO> readAll() throws Exception {
+    public List<CMGenoalimentoDTO> readAll() throws Exception {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'readAll'");
     }
 
     @Override
-    public boolean update(CMAlimentoDTO entity) throws Exception {
+    public boolean update(CMGenoalimentoDTO entity) throws Exception {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
@@ -31,7 +31,7 @@ public class CMAlimentoDAO extends CMSQLiteDataHelper implements IDAO<CMAlimento
     }
 
     @Override
-    public CMAlimentoDTO readBy(Integer id) throws Exception {
+    public CMGenoalimentoDTO readBy(Integer id) throws Exception {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'readBy'");
     }

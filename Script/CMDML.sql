@@ -11,7 +11,7 @@ Script: Insertando datos
 
 INSERT INTO CMCatalogoTipo
  ( Nombre                  ,Descripcion )  VALUES
- ('HormigaTipo'            ,'Obrera, reina y soldado')
+ ('HormigaTipo'            ,'Obrera, reina, soldado, larva')
 ,('Sexo'                   ,'Macho, hembra, asexual')
 ,('AlimentoTipo'           ,'Ingesta Nativa, GenoAlimento')              
 ,('Pais'                   ,'Pais, region, provincia');
@@ -25,27 +25,28 @@ INSERT INTO CMCatalogo
  (1                   ,'Obrera'          ,'Trabajos de la colonia') --1
 ,(1                   ,'Reina'           ,'Solo para reproduccion') --2
 ,(1                   ,'Soldado'         ,'Defiende la colonia')    --3
+,(1                   ,'Larva'           ,'Estado Embrionario')    --4
 
-,(2                   ,'Macho'           ,'Se puede reproducir')    --4
-,(2                   ,'Hembra'          ,'Tiene crias')            --5
-,(2                   ,'Asexual'         ,'No se reproduce')        --6
+,(2                   ,'Macho'           ,'Se puede reproducir')    --5
+,(2                   ,'Hembra'          ,'Tiene crias')            --6
+,(2                   ,'Asexual'         ,'No se reproduce')        --7
 
-,(3                   ,'Ingesta Nativa'  ,'Comida Natural')         --7
-,(3                   ,'GenoAlimento'    ,'Alimentos Modificados')  --8
+,(3                   ,'Ingesta Nativa'  ,'Comida Natural')         --8
+,(3                   ,'GenoAlimento'    ,'Alimentos Modificados')  --9
 
-,(4                   ,'Ecuador'          ,'Pais');                 --9
+,(4                   ,'Ecuador'          ,'Pais');                 --10
 
 
 UPDATE CMCatalogo
 SET Nombre = upper(Nombre), Descripcion = UPPER(Descripcion)
-WHERE IdCMCatalogo BETWEEN 1 AND 9;
+WHERE IdCMCatalogo BETWEEN 1 AND 10;
 
 INSERT INTO CMCatalogoRegion
 (IdCMCatalogo     , Nombre          , Descripcion) VALUES
- (9               ,'Costa'          ,'Ambiente humedo')
-,(9               ,'Sierra'         ,'Ambiente frio')
-,(9               ,'Amazonia'       ,'Ambiente calido')
-,(9               ,'Insular'        ,'Ambiente tropical');
+ (10               ,'Costa'          ,'Ambiente humedo')
+,(10               ,'Sierra'         ,'Ambiente frio')
+,(10               ,'Amazonia'       ,'Ambiente calido')
+,(10               ,'Insular'        ,'Ambiente tropical');
 
 UPDATE CMCatalogoRegion
 SET Nombre = upper(Nombre), Descripcion = UPPER(Descripcion)
@@ -87,14 +88,14 @@ WHERE IdCMCatalogoProvincia BETWEEN 1 AND 24;
 
 INSERT INTO CMCatalogoAlimento
  (IdCMCatalogo        ,Nombre             ,Descripcion) VALUES
- (7                   ,'Carnivoro'        , 'Alimento de origen animal')
-,(7                   ,'Herviboro'        , 'Alimento Modificado')
-,(7                   ,'Omnivoro'         ,'Carnes y plantas')
-,(7                   ,'Insectivoro'      ,'Solo insectos')
+ (8                   ,'Carnivoro'        , 'Alimento de origen animal')
+,(8                   ,'Herviboro'        , 'Alimento Modificado')
+,(8                   ,'Omnivoro'         ,'Carnes y plantas')
+,(8                   ,'Insectivoro'      ,'Solo insectos')
 
-,(8                   ,'X'                ,'Genoalimento')
-,(8                   ,'XY'               ,'Genoalimento')
-,(8                   ,'XX'               ,'Genoalimento');
+,(9                   ,'X'                ,'Genoalimento')
+,(9                   ,'XY'               ,'Genoalimento')
+,(9                   ,'XX'               ,'Genoalimento');
 
 UPDATE CMCatalogoAlimento
 SET Nombre = upper(Nombre), Descripcion = UPPER(Descripcion)
@@ -103,6 +104,18 @@ WHERE IdCMCatalogoAlimento IN (1,2,3,4,5,6,7);
 
 INSERT INTO CMHormiga
  (IdCMHormigaTipo    ,IdCMSexo   ,IdCMCatalogoProvincia  ,IdCMCatalogoModificado  ,IdCMCatalogoNativo) VALUES
- (1                   ,4           ,2                     ,5                       ,4)
-,(2                   ,5           ,7                     ,6                       ,3)       
-,(3                   ,6           ,18                     ,7                       ,2);       
+ (1                   ,5           ,2                     ,6                       ,4)
+,(2                   ,6           ,7                     ,7                       ,3)       
+,(3                   ,7           ,18                    ,7                       ,2);       
+
+
+ SELECT IdCMCatalogo   
+,IdCMCatalogoTipo     
+,Nombre             
+,Descripcion        
+,Estado             
+,FechaCreacion      
+,FechaModifica      
+FROM    CMCatalogo    
+WHERE   Estado ='A' 
+AND   IdCMCatalogoTipo = 1 

@@ -1,24 +1,24 @@
 package DataAccess;
 
-import DataAccess.DTO.CMTipoHormigaDTO;
+import DataAccess.DTO.CMAlimentoNativoDTO;
 import java.util.List;
 
-public class CMTipoHormigaDAO extends CMSQLiteDataHelper implements IDAO<CMTipoHormigaDTO>{
+public class CMAlimentoNativoDAO extends CMSQLiteDataHelper implements IDAO<CMAlimentoNativoDTO> {
 
     @Override
-    public boolean create(CMTipoHormigaDTO entity) throws Exception {
+    public boolean create(CMAlimentoNativoDTO entity) throws Exception {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'create'");
     }
 
     @Override
-    public List<CMTipoHormigaDTO> readAll() throws Exception {
+    public List<CMAlimentoNativoDTO> readAll() throws Exception {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'readAll'");
     }
 
     @Override
-    public boolean update(CMTipoHormigaDTO entity) throws Exception {
+    public boolean update(CMAlimentoNativoDTO entity) throws Exception {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
@@ -30,7 +30,7 @@ public class CMTipoHormigaDAO extends CMSQLiteDataHelper implements IDAO<CMTipoH
     }
 
     @Override
-    public CMTipoHormigaDTO readBy(Integer id) throws Exception {
+    public CMAlimentoNativoDTO readBy(Integer id) throws Exception {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'readBy'");
     }
