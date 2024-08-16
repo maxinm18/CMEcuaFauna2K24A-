@@ -1,7 +1,7 @@
 package AlimentoTipo.GenoAlimento;
 
-import AlimentoTipo.GenoAlimento;
+import AlimentoTipo.CMGenoAlimento;
 
-public class X extends GenoAlimento{
+public class X extends CMGenoAlimento{
 
 }

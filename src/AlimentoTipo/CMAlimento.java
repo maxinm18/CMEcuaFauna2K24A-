@@ -1,13 +1,14 @@
 package AlimentoTipo;
 
-public abstract class Alimento {
+public abstract class CMAlimento {
     protected String tipo;
 
-    public Alimento(String tipo) {
+    public CMAlimento(String tipo) {
         this.tipo = tipo;
     }
-    @Override
-    public String toString(){
+
+    public String getTipo() {
         return tipo;
     }
+
 }

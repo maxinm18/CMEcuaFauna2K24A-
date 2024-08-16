@@ -1,5 +1,3 @@
-import BusinessLogic.CMSexoBL;
-import DataAccess.DTO.CMSexoDTO;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -37,6 +35,7 @@ public class App {
             System.out.println(e.getMessage());
         }
             */
+            /* 
         try {
             CMProvinciaBL pbl =  new CMProvinciaBL();
             pbl.add(new CMProvinciaDTO(0, 0, 0, "Nuevo sexo", "prueba",
@@ -46,5 +45,15 @@ public class App {
         } catch (Exception e) {
         System.out.println(e.getMessage());
         }
+        */
+        TittlePanel();
+
+
+
+
+    }
+
+    private static void TittlePanel() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 }
